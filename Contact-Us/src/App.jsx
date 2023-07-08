@@ -5,7 +5,6 @@ import './App.css'
 import Nav from './components/Navbar/Nav'
 import Contact from './components/Contact/Contact'
 function App() {
-
   return (
     <>
     <Nav></Nav>

@@ -28,3 +28,19 @@
     font-weight:500 ;
 }
 
+.btn:hover{
+    cursor: pointer;
+}
+.btn:active{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.btnwhite:hover{
+    cursor: pointer;
+}
+.btnwhite:active{
+    background-color: black;
+    color: white;
+}
+
