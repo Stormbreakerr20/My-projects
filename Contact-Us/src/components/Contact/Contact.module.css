@@ -1,0 +1,55 @@
+.contact{
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+.text h1{
+    font-size: 50px;
+    font-weight: 800;
+}
+.text p{
+    color: gray;
+    font-weight: 600;
+    font-size: large;
+}
+.darkbtn{
+    display: flex;
+    width: max-content;
+    gap: 2rem;
+  
+}
+.formarea{
+    margin-top: 40px;
+    display: flex;
+    align-items: end;
+}
+.form{
+    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    
+}
+
+.inpt{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.inpt input{
+    padding: 0.5rem;
+}
+.txt{
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background-color: white;
+    font-weight: 500;
+}
+.submit{
+    display: flex;
+    justify-content: end;
+}
+
+

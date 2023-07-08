@@ -7,3 +7,6 @@ Install it from instruction given on website
 1. For Nike : npm create vite@latest => cd project => npm i to install rest packages  => npm run dev to start
 
 Google font poppins for  fonts
+
+2. we will use modules css for contact project these are helpful in case of global => what we will do in app.css will act as global ans can be directly used in components ex contaainer in this 
+use react icons for icons: npm i react-icons
