@@ -36,6 +36,29 @@ const Start = styled.div`
       font-weight: 800;
     }
   }
+
+  @media (max-width:1100px) {
+    flex-direction: column;
+
+
+    div img{
+      object-fit: cover;
+      height: auto;
+      max-width: 100%;
+    }
+    .content{
+      align-items: center;
+      justify-content: center;
+
+      h1{
+
+        width: max-content;
+        overflow-wrap: break-word;
+        font-size: 15vw;
+        
+      }
+    }
+  }
 `;
 
 const Button = styled.button`

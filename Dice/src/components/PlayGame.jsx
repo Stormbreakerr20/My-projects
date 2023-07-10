@@ -59,4 +59,11 @@ const Head = styled.div`
     margin: 0 2rem;
     margin-top: 2rem;
 
+    @media (max-width:900px) {
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+    }
+
 `

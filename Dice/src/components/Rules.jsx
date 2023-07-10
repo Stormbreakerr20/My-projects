@@ -42,6 +42,28 @@ const Rulesarea =styled.div`
     background: linear-gradient(to left, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius:5px;
 
+    @media (max-width:850px) {
+        h1{
+            font-size:30px;
+        }
+        ol li{
+            font-size: 12px;
+            padding: 0.3rem;
+        }
+        padding: 0;
+    }
+    @media (max-width:500px) {
+        h1{
+            font-size:20px;
+        }
+        ol li{
+            font-size: 12px;
+            padding: 0.3rem;
+        }
+        padding: 0;
+        width: 80%;
+    }
+
 
 
 
@@ -51,5 +73,16 @@ const Cross =styled.span`
     right: 0;
     top: calc(1rem);
     font-size:25px;
+    cursor: pointer;
+    @media (max-width:850px) {
+        right: -10%;
+        font-size: 15px;
+        top: 0.5rem;
+    }
+    @media (max-width:500px) {
+        right: -5%;
+        font-size: 15px;
+        top: 0.5rem;
+    }
 
 `
