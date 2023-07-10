@@ -10,3 +10,14 @@ Google font poppins for  fonts
 
 2. we will use modules css for contact project these are helpful in case of global => what we will do in app.css will act as global ans can be directly used in components ex contaainer in this 
 use react icons for icons: npm i react-icons
+
+
+3. We are making a dice game
+-> we are going to use styled components very imp.... 
+
+SelectNumber.jsx important
+key is importantto give in Box as to identify each one with unique else give error
+in box isselected act as prop to box 
+
+when argument in click use  onClick={()=>setSelectednumber(value)} this syntax to update use state ==> set((prev)=> prev+1) syntax
+for background use uiGradients site
