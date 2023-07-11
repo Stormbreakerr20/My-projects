@@ -21,3 +21,17 @@ in box isselected act as prop to box
 
 when argument in click use  onClick={()=>setSelectednumber(value)} this syntax to update use state ==> set((prev)=> prev+1) syntax
 for background use uiGradients site
+
+
+4. API project
+we got server folder from yt channel which will host api at port 9000
+so we will use api url as http://localhost:9000/
+
+we used useEffect in fetching api as useEffect is a tool which runs the function before the ui of page loads so we want to fetch data before ui and passing [] means run it once only else infinite loop of call of use effect happen
+{data?.map(value,index) => <Card>{value.text}</Card>} this means if data is not null then use map
+use flex wrap as wrap to make responsive
+
+toFixed(2) for decimal upto 2 places
+border box is that h ans w do not change on padding and margin
+row-gap: ; for flex row gap //ly col gap
+Data?.filter((value) => value.type.toLowercase().includes(type.toLowercase()));  //filter those value that include same type as btn clicked
