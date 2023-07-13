@@ -35,3 +35,40 @@ toFixed(2) for decimal upto 2 places
 border box is that h ans w do not change on padding and margin
 row-gap: ; for flex row gap //ly col gap
 Data?.filter((value) => value.type.toLowercase().includes(type.toLowercase()));  //filter those value that include same type as btn clicked
+
+
+project 4 ->
+
+Tailwind :  set tailwind from website : framework guide --> vite -> create app with template as given : tailwind css apply when you write in class name use extension Tailwind CSS IntelliSense for auto
+ans tailwind prettier from docs of  website : npm install -D prettier prettier-plugin-tailwindcss  
+EX: <div className='flex bg-red-600 justify-center'>APP</div>
+
+Firebase: website->getstarted -> after prpject setup-> click web icon (</>)-> register-> npm i firebase -> copy given code to -> src ->config folder create-> firebase.js
+now create a database in frebase -> go  to main page of project -> bulid -> firebase database (node sql database)
+-> create db -> test mode when practice / production mode for real apps(they have that google login features so one user on profile data) -> mumbai server
+start collection to store data -> write id name like contacts -> auto ID -> now add fields like name and email for trial;
+import firestore in firebase.js
+and export
+
+then frontend part
+add colors from figma to tailwind extend
+
+//////// To add browser into vs code: shift +ctrl + P -> type simple browser add url EX: http://localhost:5173/
+To add manual value in tailwind css use []
+
+useffect in appjsx is how you get data from firebase databse;
+
+we aslo used Modal => it is a popup on screen which we used to take input for new data : react chakra ui : modal
+we create a custom modal : for modal use portal and update root-modal in index.html it is done for better ui as position abs and rel of normal root hinders modal
+
+use formik for form used in addandupdate.jsx
+
+
+Now for edit btn we again need modal to open and will need isopen usestate and close and open fn again in contactarea.jsx
+to prevent it from writing again and again same thing we use hooks
+
+on adding updating etc we nedd to refresh to see changes so we use firebase property: onsnapshot in app.jsx
+
+for ui to show to user task done use Rweact tostify install it;
+
+we used "Yup" for validation of data such that koi empty name/email na daale
