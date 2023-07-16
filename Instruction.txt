@@ -72,3 +72,9 @@ on adding updating etc we nedd to refresh to see changes so we use firebase prop
 for ui to show to user task done use Rweact tostify install it;
 
 we used "Yup" for validation of data such that koi empty name/email na daale
+
+project-5 : use react npm hamburger for side nav responsive :npm i hamburger-react
+for drawer:npm i @material-tailwind/react (https://www.material-tailwind.com/docs/react/guide/cra) and npm i @heroicons/react
+also setup in tailwind config and themeprovider in main.jsx
+
+also used tabs in project in tabs.jsx=> initial value 1D selected
