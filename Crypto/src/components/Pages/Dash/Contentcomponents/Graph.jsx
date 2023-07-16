@@ -14,9 +14,9 @@ function Graph() {
       label: "1D",
       value: "1D",
       desc: (
-        <div className=" w-[max-content] mx-[auto]">
-          <img src="/images/graph.svg" alt="" />
-          <div className="flex justify-between text-xs text-gray-500 font-medium mt-1">
+        <div className=" w-[max-content] mx-[auto] smd:w-[100%]">
+          <img src="/images/graph.svg" className="w-[100%]" alt="" />
+          <div className="flex justify-between text-xs text-gray-500 font-medium mt-1 ">
             {timestamp[0].map((value, i) => (
               <span key={i}>{value}</span>
             ))}
@@ -28,8 +28,8 @@ function Graph() {
       label: "1W",
       value: "1W",
       desc: (
-        <div className=" w-[max-content] mx-[auto]">
-          <img src="/images/graph.svg" alt="" />
+        <div className=" w-[max-content] smd:w-[100%] mx-[auto]">
+          <img src="/images/graph.svg" className="w-[100%]" alt="" />
           <div className="flex justify-between text-xs text-gray-500 font-medium mt-1">
             {timestamp[1].map((value, i) => (
               <span key={i}>{value}</span>
@@ -42,8 +42,8 @@ function Graph() {
       label: "1M",
       value: "1M",
       desc: (
-        <div className=" w-[max-content] mx-[auto]">
-          <img src="/images/graph.svg" alt="" />
+        <div className=" w-[max-content] smd:w-[100%] mx-[auto]">
+          <img src="/images/graph.svg" className="w-[100%]" alt="" />
           <div className="flex justify-between text-xs text-gray-500 font-medium mt-1">
             {timestamp[2].map((value, i) => (
               <span key={i}>{value}</span>
@@ -55,7 +55,7 @@ function Graph() {
   ];
   return (
     <>
-      <div className="bg-white h-[350px] w-[50%] mr-3 p-5 mt-5 rounded-lg flex flex-col gap-3 smd:w-[100%]">
+      <div className="bg-white h-[350px] smd:h-[max-content] w-[50%] mr-3 p-5 mt-5 rounded-lg flex flex-col gap-3 smd:w-[100%]">
         <div className="flex justify-between items-center ">
           <div className="flex flex-col justify-center gap-3 sm:gap-1">
             <span className=" text-sm">Current Price</span>

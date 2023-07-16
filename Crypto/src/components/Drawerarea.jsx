@@ -4,7 +4,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import Sidenav from "../../Sidenav";
+import Sidenav from "./Sidenav";
 import Hamburger from 'hamburger-react'
 
  
@@ -24,7 +24,7 @@ export default function Drawerarea() {
           </IconButton>
         </div>
         <div className=" w-[100%]">
-        <Sidenav />
+        <Sidenav closeDrawer={closeDrawer}/>
         </div>
       </Drawer>
     </React.Fragment>

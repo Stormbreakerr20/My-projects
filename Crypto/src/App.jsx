@@ -1,20 +1,29 @@
-import './App.css'
-import Sidenav from './components/Sidenav'
-import Dashboard from './components/Dashboard'
+import "./App.css";
+import Sidenav from "./components/Sidenav";
+import Dashboard from "./components/Dashboard";
+import Transaction from "./components/Transaction";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-  
-
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Dashboard />,
+    },
+    {
+      path: "/transactions",
+      element: <Transaction />,
+    },
+    {
+      path: "/support",
+      element: <Dashboard />,
+    },
+  ]);
   return (
     <>
-    <div className='flex'>
-      <div className=' lg:hidden'>
-      <Sidenav/>
-      </div>
-      <Dashboard />
-    </div>
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

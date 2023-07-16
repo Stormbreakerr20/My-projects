@@ -3,9 +3,14 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "linear-gradient(to right bottom, rgba('#7ed56f',0.8), rgba('#28b485',0.8)), url('images/grid_bg.svg')",
+        'dot': "url('/image/dot_bg.svg')",
+    },
   },
   plugins: [],
+}
 }
 const withMT = require("@material-tailwind/react/utils/withMT");
  
