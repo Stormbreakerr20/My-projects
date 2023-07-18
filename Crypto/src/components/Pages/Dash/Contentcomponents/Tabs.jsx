@@ -11,7 +11,7 @@ import {
 export default function Tabarea({data}) {
 
   return (
-    <Tabs value="1D">
+    <Tabs value={data[0].value}>
       <TabsHeader>
         {data.map(({ label, value }) => (
           <Tab key={value} value={value}>

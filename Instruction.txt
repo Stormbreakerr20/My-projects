@@ -81,3 +81,7 @@ also used tabs in project in tabs.jsx=> initial value 1D selected
 bgimage + gradient: bg-[linear-gradient(to_right_bottom,rgba(49,84,44,0.8),rgba(16,71,52,0.8)),url('/images/grid_bg.svg')]
 
 for multi page use react router dom
+
+
+in tabcontent we had too many renders so we used use effect
+to make text nowrap use whitespace

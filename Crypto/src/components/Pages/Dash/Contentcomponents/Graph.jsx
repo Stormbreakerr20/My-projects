@@ -15,7 +15,7 @@ function Graph() {
       value: "1D",
       desc: (
         <div className=" w-[max-content] mx-[auto] smd:w-[100%]">
-          <img src="/images/graph.svg" className="w-[100%]" alt="" />
+          <img src="/images/grapha.svg" className="w-[100%]" alt="" />
           <div className="flex justify-between text-xs text-gray-500 font-medium mt-1 ">
             {timestamp[0].map((value, i) => (
               <span key={i}>{value}</span>
@@ -29,7 +29,7 @@ function Graph() {
       value: "1W",
       desc: (
         <div className=" w-[max-content] smd:w-[100%] mx-[auto]">
-          <img src="/images/graph.svg" className="w-[100%]" alt="" />
+          <img src="/images/graphb.svg" className="w-[100%]" alt="" />
           <div className="flex justify-between text-xs text-gray-500 font-medium mt-1">
             {timestamp[1].map((value, i) => (
               <span key={i}>{value}</span>
@@ -43,7 +43,7 @@ function Graph() {
       value: "1M",
       desc: (
         <div className=" w-[max-content] smd:w-[100%] mx-[auto]">
-          <img src="/images/graph.svg" className="w-[100%]" alt="" />
+          <img src="/images/graphc.svg" className="w-[100%]" alt="" />
           <div className="flex justify-between text-xs text-gray-500 font-medium mt-1">
             {timestamp[2].map((value, i) => (
               <span key={i}>{value}</span>

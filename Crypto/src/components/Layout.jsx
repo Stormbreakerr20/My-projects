@@ -1,6 +1,5 @@
 import React from "react";
 import Topnav from "./Topnav";
-import Content from "./Pages/Dash/DashContent";
 import Sidenav from "./Sidenav";
 function Layout({title,content}) {
   return (
@@ -14,7 +13,7 @@ function Layout({title,content}) {
             <div className="h-[80px] w-[100%]">
               <Topnav title={title} />
             </div>
-            <div className="bg-[#EEEEF4] h-[fit-content] pt-5 smd:h-[fit-content]">
+            <div className="bg-[#EEEEF4] h-[max-content] pt-5 smd:h-[fit-content]">
               {content}
             </div>
           </div>

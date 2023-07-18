@@ -16,7 +16,7 @@ function Sidenav({closeDrawer}) {
           </div>
           <div className="flex gap-2 items-center text-xl cursor-pointer hover:bg-[#EEEEF4] rounded-lg p-2 transition-colors duration-1000">
             <TbArrowsDoubleSwNe />
-            <Link to="/transactions" onClick={closeDrawer}><h3>Transactions</h3></Link>
+            <Link to="/transactions" onClick={closeDrawer}><h3>Transaction</h3></Link>
           </div>
         </div>
         <div className="flex gap-2 items-center text-xl cursor-pointer hover:bg-[#EEEEF4] rounded-lg p-2 transition-colors duration-1000">
