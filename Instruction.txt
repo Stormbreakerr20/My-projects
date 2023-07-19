@@ -87,3 +87,7 @@ for multi page use react router dom
 
 in tabcontent we had too many renders so we used use effect
 to make text nowrap use whitespace
+
+
+
+////// imp: on mobile 100vh include addresss bar so we use 100svh /////////

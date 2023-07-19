@@ -10,7 +10,7 @@ function Layout({title,content}) {
         </div>
         <div className="lgm:ml-[16rem]">
           <div className="h-[100vh]  w-[100%]">
-            <div className="h-[80px] w-[100%]">
+            <div className="h-[80px] w-[100%] bg-white">
               <Topnav title={title} />
             </div>
             <div className="bg-[#EEEEF4] h-[max-content] pt-5 smd:h-[fit-content]">

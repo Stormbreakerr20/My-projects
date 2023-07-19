@@ -8,16 +8,23 @@ import "react-toastify/dist/ReactToastify.css";
 const ContactValidationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   surname: Yup.string().required("Surname is required"),
-  message: Yup.string().required("Message shall be atleast 30 words").min(30),
+  message: Yup.string().required("Message shall be atleast 30 characters").min(30),
   email: Yup.string().email("Invalid Email").required("Email is required"),
+  checkbox: Yup.boolean()
+    .oneOf([true], "You need to accept the terms and conditions")
+    .required("You need to accept the terms and conditions"),
 });
 
 function Formpart() {
-
-    const clear = (value)=>{
-        toast.success("Form Submitted successfuly");
-        console.log({"Name":value.name,"Surname":value.surname,"Email": value.email,"Message":value.message});
-    }
+  const clear = (value) => {
+    toast.success("Form Submitted successfuly");
+    console.log({
+      Name: value.name,
+      Surname: value.surname,
+      Email: value.email,
+      Message: value.message,
+    });
+  };
   return (
     <>
       <div className=" h-[150px] bg-white flex-grow mb-5 p-5 rounded-xl overflow-y-auto">
@@ -29,24 +36,33 @@ function Formpart() {
             email: "",
             surname: "",
             message: "",
+            checkbox: false,
           }}
-          onSubmit={ (value,helpers)=>{
+          onSubmit={(value, helpers) => {
             clear(value);
             helpers.resetForm();
-            }}
+          }}
         >
           <Form className="flex flex-col h-[150px]">
             <div className="flex gap-2">
-              <div  className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="name">Name</label>
-                <Field name="name" className=" border rounded-lg border-gray-400 p-2 w-[90%] " placeholder="Luv" />
+                <Field
+                  name="name"
+                  className=" border rounded-lg border-gray-400 p-2 w-[90%] "
+                  placeholder="Luv"
+                />
                 <div className="text-red-500 text-xs font-medium">
                   <ErrorMessage name="name" />
                 </div>
               </div>
-              <div  className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="surname">Surname</label>
-                <Field name="surname" className=" border rounded-lg border-gray-400  p-2 w-[90%] " placeholder="Sharma" />
+                <Field
+                  name="surname"
+                  className=" border rounded-lg border-gray-400  p-2 w-[90%] "
+                  placeholder="Sharma"
+                />
                 <div className="text-red-500 text-xs font-medium">
                   <ErrorMessage name="surname" />
                 </div>
@@ -64,16 +80,32 @@ function Formpart() {
                 <ErrorMessage name="email" />
               </div>
             </div>
-            <div  className="flex flex-col gap-2 mt-2">
-                <label htmlFor="message">Message</label>
-                <Field name="message" as="textarea" className=" border rounded-lg border-gray-400  p-2 " placeholder="Your Message" />
-                <div className="text-red-500 text-xs font-medium">
-                  <ErrorMessage name="message" />
-                </div>
+            <div className="flex flex-col gap-2 mt-2">
+              <label htmlFor="message">Message</label>
+              <Field
+                name="message"
+                as="textarea"
+                className=" border rounded-lg border-gray-400  p-2 "
+                placeholder="Your Message"
+              />
+              <div className="text-red-500 text-xs font-medium">
+                <ErrorMessage name="message" />
               </div>
+            </div>
+            <div className="flex gap-2 mt-2">
+              <Field type="checkbox" name="checkbox" />
+              <label htmlFor="checkbox">
+                I agree all{" "}
+                <span className="text-purple-900">Terms ans Conditions</span>
+              </label>
+              <div className="text-red-500 text-xs font-medium">
+                <ErrorMessage name="checkbox" />
+              </div>
+            </div>
+
             <div className="flex justify-end mt-5">
-              <button className=" bg-dark-yellow p-1 border rounded-lg font-medium ">
-                Contact
+              <button className=" bg-dark-yellow p-1 border rounded-lg font-medium w-[100%] mb-5 cursor-pointer hover:bg-blue-gray-300 transition-colors duration-700 ">
+                Send a message
               </button>
             </div>
           </Form>
