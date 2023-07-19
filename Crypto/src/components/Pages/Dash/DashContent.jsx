@@ -2,6 +2,7 @@ import React from "react";
 import Value from "./Contentcomponents/Value";
 import Graph from "./Contentcomponents/Graph";
 import Recent from "./Contentcomponents/Recent";
+
 function Content() {
   return (
     <>
@@ -21,6 +22,7 @@ function Content() {
             <p>Learn more about our real estate, mortgage, and  corporate account services</p>
           </div>
         </div>
+        
       </div>
     </>
   );

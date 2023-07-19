@@ -3,6 +3,8 @@ import Sidenav from "./components/Sidenav";
 import Dashboard from "./components/Dashboard";
 import Transaction from "./components/Transaction";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Support from "./components/Support";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const router = createBrowserRouter([
@@ -16,12 +18,14 @@ function App() {
     },
     {
       path: "/support",
-      element: <Dashboard />,
+      element: <Support />,
     },
   ]);
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer/>
+      
     </>
   );
 }

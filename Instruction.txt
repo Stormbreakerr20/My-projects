@@ -70,6 +70,8 @@ to prevent it from writing again and again same thing we use hooks
 on adding updating etc we nedd to refresh to see changes so we use firebase property: onsnapshot in app.jsx
 
 for ui to show to user task done use Rweact tostify install it;
+also need to add toast container in app jsx
+also need to import css of toast see here: https://www.copycat.dev/blog/react-toastify/
 
 we used "Yup" for validation of data such that koi empty name/email na daale
 

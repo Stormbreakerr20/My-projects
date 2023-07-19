@@ -34,6 +34,8 @@ module.exports = withMT({
       // => @media (max-width: 767px) { ... }
       'smd':{'max': '980px'},
 
+      'rescontact':{'max':'690px'},
+
       'sm': {'max': '600px'},
       'vsm': {'max': '430px'},
       // => @media (max-width: 639px) { ... }

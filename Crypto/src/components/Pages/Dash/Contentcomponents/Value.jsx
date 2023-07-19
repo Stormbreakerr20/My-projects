@@ -1,5 +1,6 @@
 import React from 'react'
 import {AiOutlineUpload,AiOutlineDownload} from "react-icons/ai"
+
 function Value() {
   return (
     <div id="top" className=" bg-white flex justify-between h-[max-content] rounded-lg items-center p-3 md:flex-col ">
@@ -21,7 +22,7 @@ function Value() {
 
           <div className="flex gap-3">
             <button className=" flex gap-2 items-center bg-[#5F00D9] hover:bg-purple-900 text-white p-2 rounded-lg vsm:text-sm"><span className=" text-lg">{<AiOutlineDownload/>}</span><span>Deposit</span></button>
-            <button className=" flex gap-2 items-center bg-[#5F00D9] hover:bg-purple-900 text-white p-2 rounded-lg vsm:text-sm"><span className=" text-lg"><AiOutlineUpload/></span><span>Withdraw</span></button>
+            <button  className=" flex gap-2 items-center bg-[#5F00D9] hover:bg-purple-900 text-white p-2 rounded-lg vsm:text-sm"><span className=" text-lg"><AiOutlineUpload/></span><span>Withdraw</span></button>
           </div>
         </div>
   )
