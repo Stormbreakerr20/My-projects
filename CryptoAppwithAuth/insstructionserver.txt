@@ -1,0 +1,60 @@
+cd server 
+npm i
+npm run dev to start server 
+then postman.json-> reveal in explorer
+import in postman and drag and drop
+
+if url not working go to environment-> new env var= url type: def initail value= currentvalue http://localhost:9000
+from top right select env as name of env
+
+now you can use postman in cscode also by 
+
+we will use react query npm i react-query in crypto
+can chek docs
+
+wrap in app.jsx
+from main page and dev tools in docs
+
+now on running app you will see a flower at left bottom
+
+now npm i axios through which api call will be made
+now set up axios in api folder in src
+
+in axios or any use env folder rather than direct url process.env.BACKEND_URL is for create react APP in vite import.meta.env aand preffix in url
+
+create two types of query in Query folder
+Now make a example network call in Dashboard using useEffect
+
+Now in place of useEffect we use  useQuery : it require queryfunction and qkey with value an array: we get many options with that one of it is .isLoading
+
+Now create function for each and go to that particular like sigin function created then got to Login.jsx
+useMutation for calls except get : like in login.jsx {mutate,isLoading,error,isError} we get these from useMutation
+mutate is used in onSubmit of form
+
+check from postman keys of form and db keys must match 
+
+onsucces usenavigate 
+
+to send email from signup to verification use State of navigate and location in Email.jsx
+
+in email.jsx we use useQuery hook as we don't want any event as directly trigger it in place of mutation however we want ressend so use mutation is better
+we use useEffect to trigger it for first time
+
+when we send verification mail we get a url which has a token at end but contains . so we use a method from stack overflow and it is done in registration.js
+npm install --save-dev vite-plugin-rewrite-all
+
+add to vite.config
+import pluginRewriteAll from 'vite-plugin-rewite-all';
+
+in registration.jsx use params to get token from link ,we use use Query as we want it to directly done
+
+
+there was a bug in location part in email.jsx so now we will take email from params
+
+in verify-user-mail there is an error type verfiy-...
+
+(npm i react-spinners)
+
+Note : token = "" token1="nojwnr"
+console.log(!!token) // false
+console.log(!!token1) //true    // used for exist or not !! give bool
