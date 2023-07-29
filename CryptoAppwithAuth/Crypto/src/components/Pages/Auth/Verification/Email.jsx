@@ -6,7 +6,7 @@ import { sendemailVerify } from "../../../../api/Query/userQuery";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ClipLoader from "react-spinners/ClipLoader";
-
+import emailjs from '@emailjs/browser';
 
 function Email() {
   const {email} = useParams();
@@ -23,6 +23,7 @@ function Email() {
     mutationFn: sendemailVerify,
     onSettled: (data) => {
       console.log(data)
+      emailjs.send('service_u82a61r', 'template_i97sjwp', {reply_to:email,from_name:"Luv",message:data.message,to_name:""},'HkTAbAMjsGkRy7O4b');
     },
     onError: (error) => {
       toast.error(`Sign-Up Error: ${error.message}`);

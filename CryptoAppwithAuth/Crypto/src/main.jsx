@@ -4,10 +4,13 @@ import App from "./App.jsx";
 import "./index.css";
 import { ThemeProvider } from "@material-tailwind/react";
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
+
+      <ThemeProvider>
         <App />
-    </ThemeProvider>
+      </ThemeProvider>
+
   </React.StrictMode>
 );

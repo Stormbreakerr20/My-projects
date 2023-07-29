@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Layout from "./Layout";
 
 import DashContent from "./Pages/Dash/DashContent"
 import { fetchExample } from "../api/Query/exampleQuery";
 import { useQuery } from "react-query";
 
-
 function Dashboard() {
+
 
   // const exapmleQuery = useQuery({
   //   queryKey:["example"],

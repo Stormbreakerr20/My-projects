@@ -58,3 +58,11 @@ in verify-user-mail there is an error type verfiy-...
 Note : token = "" token1="nojwnr"
 console.log(!!token) // false
 console.log(!!token1) //true    // used for exist or not !! give bool
+
+not done in this project protected one can see dosomecoding video
+Now after everything done we will use usecontext,npm i  react-cookie and jwt-decode this are to ensure only logged in user can acces app and to protect user
+context values van be accessed anywhere in app just wrap it in main.jsx (our is in provider)
+example of it's use in Dashboard.jsx
+jwtdecode to get data from token not 
+
+Email.js to send mail

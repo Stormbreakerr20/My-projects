@@ -8,6 +8,8 @@ import { EmailforPassword } from "../../../../api/Query/userQuery";
 import ClipLoader from "react-spinners/ClipLoader";
 import { toast } from "react-toastify";
 
+import emailjs from '@emailjs/browser';
+
 const ContactValidationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid Email").required("Email is required"),
 });
@@ -20,7 +22,8 @@ function Forgotpassword() {
     mutationKey: ["Email-for-Passoword-Forgot"],
     mutationFn: EmailforPassword,
     onSuccess: (data) => {
-      console.log(data)
+      console.log(data);
+      emailjs.send('service_u82a61r', 'template_i97sjwp', {reply_to:email,from_name:"Luv",message:data.message,to_name:""},'HkTAbAMjsGkRy7O4b');
 
       navigate(`/sent/${email}`);
     },

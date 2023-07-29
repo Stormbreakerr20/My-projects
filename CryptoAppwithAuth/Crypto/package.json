@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.0.6",
     "axios": "^1.4.0",
+    "email-js": "^2.0.2",
     "flowbite": "^1.7.0",
     "formik": "^2.4.2",
     "hamburger-react": "^2.5.0",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-dropdown": "^1.11.0",
     "react-icons": "^4.10.1",
