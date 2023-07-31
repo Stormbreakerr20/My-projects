@@ -42,3 +42,5 @@ npm i react-color for color picker
 read file in customizer
 background={null} was missing from Environment that's why there was an error
 To correct environment problem: https://codesandbox.io/s/nameless-shadow-jhk70?file=/src/index.js:253-487
+
+for aipicker :npm i openai dotenv: https://platform.openai.com/apps using API : https://platform.openai.com/docs/guides/images/usage

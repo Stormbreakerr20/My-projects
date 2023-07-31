@@ -15,16 +15,20 @@ import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
+
 const Customizer = () => {
   const snap = useSnapshot(state);
 
   const [file, setFile] = useState("");
+  const [prompt,setPrompt] = useState("");
+  const [generatingImg, setGeneratingImg] = useState(false);
 
   const [activeEditorTab, setEditorTab] = useState("");
   const [activeFilterTab, setFilterTab] = useState({
     logoShirt: true,
     stylishShirt: false,
   });
+
 
   const generateTab = () => {
     switch (activeEditorTab) {
@@ -33,14 +37,17 @@ const Customizer = () => {
       case "filepicker":
         return <Filepicker file={file} setFile={setFile} readfile={readfile} />;
       case "aipicker":
-        return <AIpicker />;
+        return <AIpicker prompt={prompt} setPrompt={setPrompt} generatingImg={generatingImg} handleSubmit={handleSubmit} />;
       default:
         return null;
     }
   };
+  const handleSubmit=async(type)=>{
+    return alert("Currently this feature is not available");
+  }
 
   const readfile = (type) => {
-    console.log("start")
+    console.log("start");
     reader(file).then((result) => {
       handleDecals(type, result);
       setEditorTab("");
@@ -49,8 +56,8 @@ const Customizer = () => {
 
   const handleDecals = (type, result) => {
     const decaltype = DecalTypes[type];
-    console.log(decaltype)
-    console.log(result)
+    console.log(decaltype);
+    console.log(result);
 
     state[decaltype.stateProperty] = result;
 
@@ -62,20 +69,23 @@ const Customizer = () => {
   const handleFilterTab = (tabname) => {
     switch (tabname) {
       case "logoShirt":
-        activeFilterTab[tabname]=!activeFilterTab[tabname]
-        state.isLogoicon = activeFilterTab[tabname];
+        state.isLogoicon = !activeFilterTab[tabname];
         break;
       case "stylishShirt":
-        activeFilterTab[tabname]=!activeFilterTab[tabname]
-        state.isFullicon = activeFilterTab[tabname];
+        state.isFullicon = !activeFilterTab[tabname];
         break;
       case "download":
-          break;  
+        break;
       default:
         (state.isLogoicon = true), (state.Fullicon = false);
         break;
     }
-    i;
+    setFilterTab((prevState) => {
+      return {
+        ...prevState, 
+        [tabname]: !prevState[tabname]
+      }
+    })
   };
 
   return (
@@ -94,7 +104,11 @@ const Customizer = () => {
                     <Tab
                       key={tab.name}
                       tab={tab}
-                      handleClick={() => {activeEditorTab===tab.name?setEditorTab(""):setEditorTab(tab.name)}}
+                      handleClick={() => {
+                        activeEditorTab === tab.name
+                          ? setEditorTab("")
+                          : setEditorTab(tab.name);
+                      }}
                     />
                   ))}
                 </div>

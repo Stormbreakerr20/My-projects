@@ -93,3 +93,12 @@ to make text nowrap use whitespace
 
 
 ////// imp: on mobile 100vh include addresss bar so we use 100svh /////////
+
+
+Syntax to update:
+    setFilterTab((prevState) => {
+      return {
+        ...prevState,
+        [tabname]: !prevState[tabname]
+      }
+    })

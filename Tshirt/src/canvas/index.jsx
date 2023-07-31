@@ -20,7 +20,7 @@ const CanvasModel = () => {
     >
       <ambientLight intensity={0.5} />
 
-        <Environment  preset="sunset" />
+        <Environment preset="sunset" />
 
 
       <CameraRig>
