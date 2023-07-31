@@ -42,6 +42,8 @@ project 4 ->
 Tailwind :  set tailwind from website : framework guide --> vite -> create app with template as given : tailwind css apply when you write in class name use extension Tailwind CSS IntelliSense for auto
 ans tailwind prettier from docs of  website : npm install -D prettier prettier-plugin-tailwindcss  
 EX: <div className='flex bg-red-600 justify-center'>APP</div>
+add tailwindcss() in viteconfig plugins
+import tailwindcss from 'tailwindcss';
 
 Firebase: website->getstarted -> after prpject setup-> click web icon (</>)-> register-> npm i firebase -> copy given code to -> src ->config folder create-> firebase.js
 now create a database in frebase -> go  to main page of project -> bulid -> firebase database (node sql database)

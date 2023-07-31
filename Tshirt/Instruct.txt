@@ -1,0 +1,44 @@
+npm i framer-motion for animations motion is used for different task
+npm i valtio it act as context in react provide proxy to define keys, usesnapshot to get a static or current values of those keys anywhere in react app
+public asset config folders are pre made
+create store, pages, comp, canvas folders
+
+animation can be applied like this in home.jsx
+      <motion.section {...slideAnimation("down")}>
+        <motion.div {...slideAnimation("left")}>
+          <img src="./threejs.png" alt="" className="h-8 w-8 object-contain" />
+        </motion.div>
+      </motion.section>
+
+in customizer.jsx each motion.div must given a key as we are returning multiple divs so animate can identify each one uniquely
+
+more packeges to be installed like 
+npm i three @react-three/fiber @react-three/drei maath
+//////////////////////////////////////////////
+combo of two powerful things react and three js : Three.js is a JavaScript library used for 3D graphics : react-threejs is used to make 3d graphics easy in react
+
+In summary, react-three/fiber allows developers to create interactive 3D web applications using the familiar React syntax. It simplifies the process of building 3D scenes, managing animations, and handling user interactions in a way that aligns with how React handles UI components.
+react-three/fiber used in canvas 
+
+react-three/drei : In summary, react-three-drei is an extension of react-three/fiber that makes working with 3D graphics in React applications more convenient. It offers a collection of pre-built components, hooks, and helpers that streamline the process of building interactive and visually stunning 3D scenes and animations, enabling developers to create impressive 3D experiences with ease.
+
+then we created few three js components as jsx like backdrop in canvas
+<ambientLight intensity={0.5}/>
+<Environment preset='city'/> are to spread color in entire page /// Read about them in Chat gpt
+
+maath: https://github.com/pmndrs/maath is basically for math in threejs :This is a collection of useful math helpers, random generators, bits and bobs.
+
+The useFrame :  hook allows you to define a function that will be called on every frame update, allowing you to apply dynamic changes to your scene, such as updating object positions, rotations, or any other visual effects.
+
+.glb in public is shirt, we use it using useGLTF in shirt.jsx
+
+CameraRig is to increase it's size
+
+useFrame need input as state and delta state is not the proxy wali/ store wali state : (state: RootState, delta: number)
+
+easing.dampE(dampE(current: Euler, target: [x: number, y: number, z: number, order?: EulerOrder | undefined] | Euler, smoothTime?: number | undefined, delta?: number | undefined, maxSpeed?: number | undefined, easing?: ((t: number) => number) | undefined, eps?: number | undefined))
+
+npm i react-color for color picker
+read file in customizer
+background={null} was missing from Environment that's why there was an error
+To correct environment problem: https://codesandbox.io/s/nameless-shadow-jhk70?file=/src/index.js:253-487
