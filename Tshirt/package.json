@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "proxy": "lcp --proxyUrl  https://oaidalleapiprodscus.blob.core.windows.net/private"
   },
   "dependencies": {
     "@react-three/drei": "^9.70.4",
@@ -19,6 +20,7 @@
     "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
+    "react-spinners": "^0.13.8",
     "three": "^0.155.0",
     "use-asset": "^1.0.4",
     "valtio": "^1.11.1"

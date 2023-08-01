@@ -1,0 +1,9 @@
+npm packages : npm i openai mongoose npm i express dotenv cors
+npm init -you
+add nodemon in package.json
+
+now on render : npm install in build 
+then start it should take auto : like node index.js
+you should .gitignore: node_modules/* and package-lock.json
+then you will get a link at top:
+now add that llink in api in front end

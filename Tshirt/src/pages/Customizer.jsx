@@ -16,20 +16,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 
+
 const Customizer = () => {
   const snap = useSnapshot(state);
 
   const [file, setFile] = useState("");
-  const [prompt,setPrompt] = useState("");
   const [generatingImg, setGeneratingImg] = useState(false);
-
+  
   const [activeEditorTab, setEditorTab] = useState("");
   const [activeFilterTab, setFilterTab] = useState({
     logoShirt: true,
     stylishShirt: false,
   });
-
-
+  
+  const [prompt,setPrompt] = useState("");
+  
   const generateTab = () => {
     switch (activeEditorTab) {
       case "colorpicker":
@@ -37,13 +38,33 @@ const Customizer = () => {
       case "filepicker":
         return <Filepicker file={file} setFile={setFile} readfile={readfile} />;
       case "aipicker":
-        return <AIpicker prompt={prompt} setPrompt={setPrompt} generatingImg={generatingImg} handleSubmit={handleSubmit} />;
+        return <AIpicker prompt={prompt} setPrompt={setPrompt} handleSubmit={handleSubmit} generatingImg={generatingImg} />;
       default:
         return null;
     }
   };
   const handleSubmit=async(type)=>{
-    return alert("Currently this feature is not available");
+    if(prompt.length === "") return alert("Currently this feature is not available");
+
+    try {
+      setGeneratingImg(true);
+      const response = await fetch('https://backend12-yas5.onrender.com/api/v1/dalle',{
+        method:'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({prompt})
+      })
+
+      const data = await response.json();
+      handleDecals(type,`data:image/png;base64,${data.photo}`)
+
+    } catch (error) {
+      alert(error)
+    }finally{
+      setEditorTab("")
+      setGeneratingImg(false)
+    }
   }
 
   const readfile = (type) => {
@@ -77,7 +98,7 @@ const Customizer = () => {
       case "download":
         break;
       default:
-        (state.isLogoicon = true), (state.Fullicon = false);
+        (state.isLogoicon = true), (state.isFullicon = false);
         break;
     }
     setFilterTab((prevState) => {

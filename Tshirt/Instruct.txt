@@ -44,3 +44,10 @@ background={null} was missing from Environment that's why there was an error
 To correct environment problem: https://codesandbox.io/s/nameless-shadow-jhk70?file=/src/index.js:253-487
 
 for aipicker :npm i openai dotenv: https://platform.openai.com/apps using API : https://platform.openai.com/docs/guides/images/usage
+
+while getting image of ai issue: cross origin request denied hencce we need backend to make use of cors() which protect from these error
+
+CORS = Cross-origin resource sharing. CORS is the mechanism that allows your website to request resources to a different domain where it’s being hosted.
+https://medium.com/tribalscale/stop-cursing-cors-c2cbb4997057
+
+so we create a server
