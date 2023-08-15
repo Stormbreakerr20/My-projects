@@ -1,0 +1,4 @@
+make actions
+make reducer in it combine Reducers
+make store to store Reducers
+redux dev tools from extension to see in browser

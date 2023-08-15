@@ -15,17 +15,21 @@ use react icons for icons: npm i react-icons
 3. We are making a dice game
 -> we are going to use styled components very imp.... 
 
+to update usestate: setRandomnumber((prev)=>number);
+
 SelectNumber.jsx important
-key is importantto give in Box as to identify each one with unique else give error
+key is important to give in Box as to identify each one with unique else give error
 in box isselected act as prop to box 
 
 when argument in click use  onClick={()=>setSelectednumber(value)} this syntax to update use state ==> set((prev)=> prev+1) syntax
-for background use uiGradients site
+for background use ## uiGradients site
 
 
 4. API project
 we got server folder from yt channel which will host api at port 9000
 so we will use api url as http://localhost:9000/
+
+you can use this server for any api
 
 we used useEffect in fetching api as useEffect is a tool which runs the function before the ui of page loads so we want to fetch data before ui and passing [] means run it once only else infinite loop of call of use effect happen
 {data?.map(value,index) => <Card>{value.text}</Card>} this means if data is not null then use map
@@ -102,3 +106,8 @@ Syntax to update:
         [tabname]: !prevState[tabname]
       }
     })
+
+
+Speech project using react speech recog :npm i react-speech-recognitio
+
+for Error with VITE use create react app 
