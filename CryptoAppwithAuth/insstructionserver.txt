@@ -7,8 +7,6 @@ import in postman and drag and drop
 if url not working go to environment-> new env var= url type: def initail value= currentvalue http://localhost:9000
 from top right select env as name of env
 
-now you can use postman in cscode also by 
-
 we will use react query npm i react-query in crypto
 can chek docs
 
