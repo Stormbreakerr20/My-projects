@@ -1,8 +1,10 @@
 import React from "react";
 import "./Mainarea.css";
+import './x.js'
 export default function Nav() {
   return (
     <>
+    
     <div className="cont">
       <div className="main ">
         <div className="txt">

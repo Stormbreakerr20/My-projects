@@ -69,7 +69,6 @@ function App() {
       <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={false} />
       <ToastContainer />
-      
     </QueryClientProvider>
   );
 }
