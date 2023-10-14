@@ -1,27 +1,23 @@
 import { useState } from 'react'
 import './App.css'
 import Nav from './assets/components/Nav'
-import { RouterProvider,createBrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sorting from './assets/Pages/Sort/Sorting'
-import Layout from './assets/Pages/Layout/Layout'
+import { ToastContainer } from 'react-toastify';
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element:<Layout />,
-    },
-  ]);
+
   return (
     <>
-    <RouterProvider router={router} />
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route path='/' element={""}></Route>
+          <Route path='/sorting' element={<Sorting />}></Route>
+        </Routes>
+        <ToastContainer />
+      </BrowserRouter>
     </>
   )
 }
 
 export default App
-
-// const Box = styled.div`
-//   width: 50px;
-//   height: 50px;
-//   background-color: blue;
-// `
