@@ -7,13 +7,10 @@ function Nav() {
   return (
     <div className="flex justify-between pt-1 items-center mx-[50px]  ">
       <Text className="flex flex-grow items-center justify-center gap-8 max-sm:gap-3  ">
-        <Link to="/sorting">
+        <Link to="/">
           <span>SORTING</span>
         </Link>
-        <Link to="/">
         <span>LISTS</span>
-          
-        </Link>
         <div>
           <img src={Logo} alt="" className="pt-2 w-[100px] h-[100px] max-md:w-[80px] max-md:h-[80px] max-[595px]:w-[80px] max-[595px]:h-[80px] max-[451px]:w-[60px] max-[451px]:h-[60px]" />
         </div>

@@ -36,7 +36,7 @@ function Bars({ arr, setArr }) {
           h={window.innerWidth<640?value[0] * (75 / 20):value[0] * (80 / 20)}
           key={index}
         >
-          {arr.length < 30 ? value[0] : ''}
+          {window.innerWidth<800?arr.length<20?value[0]:'':arr.length<40?value[0]:''}
         </Sticks>
       ))}
     </Box>

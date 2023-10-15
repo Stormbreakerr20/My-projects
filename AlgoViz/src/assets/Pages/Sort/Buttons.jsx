@@ -17,7 +17,7 @@ import {
 } from "./SortingAlgos";
 
 function Buttons({ arr, setArr }) {
-  const [rangeValue, setRangeValue] = useState(50);
+  const [rangeValue, setRangeValue] = useState(20);
   const [speedValue, setSpeedValue] = useState(7);
   const snap = useSnapshot(state);
 
@@ -98,7 +98,7 @@ function Buttons({ arr, setArr }) {
               id="steps-range"
               type="range"
               min="10"
-              max={window.innerWidth<600?window.innerWidth<460?'80':"100":"150"}
+              max={window.innerWidth<800?window.innerWidth<550?'60':"80":"150"}
               value={rangeValue}
               step="5"
               className="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 max-md:w-[40%]"

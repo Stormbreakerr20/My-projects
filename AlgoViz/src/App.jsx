@@ -11,8 +11,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path='/' element={""}></Route>
-          <Route path='/sorting' element={<Sorting />}></Route>
+          <Route path='/' element={<Sorting />}></Route>
         </Routes>
         <ToastContainer />
       </BrowserRouter>

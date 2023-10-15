@@ -149,16 +149,18 @@ const Partition = async (sortedArr, setArr, delay, low, high) => {
     await Display_Onscreen(sortedArr,setArr,j,1,select,delay);
     while(i<high && sortedArr[i][0] <= sortedArr[pivot][0]){
       if(i == pivot)await Display_Onscreen(sortedArr,setArr,i,1,"white",delay);
-      else await Display_Onscreen(sortedArr,setArr,i,1,initial,delay);
+      else await Display_Onscreen(sortedArr,setArr,i,1,initial,(sortedArr.length > 60?0:delay/20));
       i++;
-      if(i<high) await Display_Onscreen(sortedArr,setArr,i,1,select,delay);
+      if(i<high) await Display_Onscreen(sortedArr,setArr,i,1,select,(sortedArr.length > 60?0:delay/20));
     }
     while(j>low && sortedArr[j][0] > sortedArr[pivot][0]){
-      await Display_Onscreen(sortedArr,setArr,j,1,initial,delay);
+      await Display_Onscreen(sortedArr,setArr,j,1,initial,(sortedArr.length > 60?0:delay/20));
       j--;
-      if(j>low) await Display_Onscreen(sortedArr,setArr,j,1,select,delay);
+      if(j>low) await Display_Onscreen(sortedArr,setArr,j,1,select,(sortedArr.length > 60?0:delay/20));
     }
     if(i<j){
+      await Display_Onscreen(sortedArr,setArr,j,1,select,0);
+      await Display_Onscreen(sortedArr,setArr,i,1,select,delay);
       [sortedArr[j], sortedArr[i]] = [sortedArr[i], sortedArr[j]];
       await Display_Onscreen(sortedArr,setArr,j,1,swapped,0);
       await Display_Onscreen(sortedArr,setArr,i,1,swapped,delay);

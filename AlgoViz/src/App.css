@@ -1,9 +1,9 @@
 body {
-  background-image: url("Desktop_5.jpg");
+  background-image: url("../public/Desktop.jpg");
   background-blend-mode: darken;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Optional, for a fixed background */
+  background-attachment: fixed; 
 }
 
 @keyframes blink {
