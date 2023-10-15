@@ -1,10 +1,11 @@
 body {
-  /* background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(55,1,219,1) 0%, rgba(49,3,205,1) 0%, rgba(50,3,206,1) 0%, rgba(22,15,134,1) 0%, rgba(10,20,104,1) 0%, rgba(13,19,111,1) 38%, rgba(12,19,108,1) 74%, rgba(4,23,88,1) 100%, rgba(0,212,255,1) 100%); */
-  background: url("Desktop_5.jpg");
+  background-image: url("Desktop_5.jpg");
   background-blend-mode: darken;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional, for a fixed background */
 }
+
 @keyframes blink {
   0% {
     opacity: 1;

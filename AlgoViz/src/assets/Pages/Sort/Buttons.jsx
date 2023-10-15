@@ -60,88 +60,93 @@ function Buttons({ arr, setArr }) {
     let maxSpeed = 10;
     const minDelay = state.ArraySize > 80 ? 0 : 15;
     const maxDelay = 1000;
-  
+
     if (state.ArraySize > 100) {
       maxSpeed = 7;
     } else if (state.ArraySize < 50) {
       maxSpeed = 12;
     }
-  
+
     const speedValue = parseInt(e.target.value, 10);
     const delay =
       ((maxSpeed - speedValue) / (maxSpeed - minSpeed)) *
-      (maxDelay - minDelay) +
+        (maxDelay - minDelay) +
       minDelay;
-  
+
     state.delay = delay;
     setSpeedValue(speedValue);
   };
-  
 
   return (
     <>
-      <div className="flex justify-between w-[100%] gap-3">
-        <div className="flex-grow h-[40px] bg-[#FFA800] rounded-lg flex justify-evenly items-center">
-          <label
-            htmlFor="steps-range"
-            className="block mb-1 text-lg font-medium text-gray-900 dark:text-white"
-          >
-            <span className="flex justify-center items-center gap-3">
-              <span className=" text-2xl ">
-                <CgSize />
+      <div className="flex justify-between w-[100%] gap-3 max-xl:flex-col max-xl:w-[80%] max-[880px]:w-[100%]">
+        <div className="flex gap-3 flex-grow max-xl:w-[100%] max-sm:flex-col">
+          <div className="flex-grow max-xl:w-[50%] max-sm:w-[100%] h-[40px] bg-[#FFA800] rounded-lg flex justify-evenly items-center ">
+            <label
+              htmlFor="steps-range"
+              className="block mb-1 text-lg font-medium text-gray-900 dark:text-white"
+            >
+              <span className="flex justify-center items-center gap-3">
+                <span className=" text-2xl ">
+                  <CgSize />
+                </span>
+                <span>Array Size</span>
               </span>
-              <span>Array Size</span>
-            </span>
-          </label>
-          <input
-            disabled={state.isSorting}
-            id="steps-range"
-            type="range"
-            min="10"
-            max="150"
-            value={rangeValue}
-            step="5"
-            className="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-            onChange={handleRangeChange}
-          />
-        </div>
-        <div className="flex-grow h-[40px] bg-[#FFA800] rounded-lg flex justify-evenly items-center">
-          <label
-            htmlFor="speed"
-            className="block mb-1 text-lg font-medium text-gray-900 dark:text-white"
-          >
-            <span className="flex justify-center items-center gap-3">
-              <span className=" text-2xl ">
-                <MdSpeed />
+            </label>
+            <input
+              disabled={state.isSorting}
+              id="steps-range"
+              type="range"
+              min="10"
+              max={window.innerWidth<600?window.innerWidth<460?'80':"100":"150"}
+              value={rangeValue}
+              step="5"
+              className="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 max-md:w-[40%]"
+              onChange={handleRangeChange}
+            />
+          </div>
+          <div className="flex-grow h-[40px] max-xl:w-[50%] max-sm:w-[100%] bg-[#FFA800] rounded-lg flex justify-evenly items-center">
+            <label
+              htmlFor="speed"
+              className="block mb-1 text-lg font-medium text-gray-900 dark:text-white"
+            >
+              <span className="flex justify-center items-center gap-3 ">
+                <span className=" text-2xl ">
+                  <MdSpeed />
+                </span>
+                <span>Algo Speed</span>
               </span>
-              <span>Algo Speed</span>
-            </span>
-          </label>
-          <input
-            disabled={state.isSorting}
-            id="speed"
-            type="range"
-            min="5"
-            max="10"
-            value={speedValue}
-            step="1"
-            className="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-            onChange={handleSpeedChange}
-          />
+            </label>
+            <input
+              disabled={state.isSorting}
+              id="speed"
+              type="range"
+              min="5"
+              max="10"
+              value={speedValue}
+              step="1"
+              className="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700  max-md:w-[40%]"
+              onChange={handleSpeedChange}
+            />
+          </div>
+
         </div>
-        <div className="flex-grow h-[40px]  rounded-lg z-50">
-          <Drop />
-        </div>
-        <div
-          onClick={state.isSorting?null:Startsorting}
-          className="flex-grow h-[40px] bg-[#FFA800] rounded-lg flex justify-evenly items-center"
-        >
-          <span className="flex justify-center items-center gap-3 mb-1 text-lg font-medium text-gray-900 cursor-pointer">
-            <span>{state.isSorting ? "Sorting" : "Start"}</span>
-            <span className={`text-lg ${state.isSorting ? "blinking" : ""}`}>
-              <BsGooglePlay />
+        <div className="flex gap-3 flex-grow max-xl:w-[100%] max-sm:flex-col">
+
+          <div className="flex-grow h-[40px] max-xl:w-[50%] max-sm:w-[100%]  rounded-lg z-50">
+            <Drop />
+          </div>
+          <div
+            onClick={state.isSorting ? null : Startsorting}
+            className="max-sm:w-[100%] flex-grow h-[40px] bg-[#FFA800] rounded-lg flex justify-evenly items-center max-xl:w-[50%]"
+          >
+            <span className="flex justify-center items-center gap-3 mb-1  text-lg font-medium text-gray-900 cursor-pointer">
+              <span>{state.isSorting ? "Sorting" : "Start"}</span>
+              <span className={`text-lg ${state.isSorting ? "blinking" : ""}`}>
+                <BsGooglePlay />
+              </span>
             </span>
-          </span>
+          </div>
         </div>
       </div>
     </>

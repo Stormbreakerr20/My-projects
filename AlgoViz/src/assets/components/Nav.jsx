@@ -5,19 +5,21 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div className="flex justify-between pt-1 items-center mx-[50px] ">
-      <Text className="flex flex-grow items-center justify-center gap-8">
+    <div className="flex justify-between pt-1 items-center mx-[50px]  ">
+      <Text className="flex flex-grow items-center justify-center gap-8 max-sm:gap-3  ">
         <Link to="/sorting">
           <span>SORTING</span>
         </Link>
         <Link to="/">
-          <span>GRAPHS</span>
+        <span>LISTS</span>
+          
         </Link>
         <div>
-          <img src={Logo} alt="" className="pt-2 w-[100px] h-[100px]" />
+          <img src={Logo} alt="" className="pt-2 w-[100px] h-[100px] max-md:w-[80px] max-md:h-[80px] max-[595px]:w-[80px] max-[595px]:h-[80px] max-[451px]:w-[60px] max-[451px]:h-[60px]" />
         </div>
+        <span>GRAPHS</span>
         <span>HEAPS</span>
-        <span>LINKED-LIST</span>
+        
       </Text>
       
     </div>
@@ -35,4 +37,13 @@ const Text = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  @media (max-width: 770px) {
+    font-size: 18px;
+  }
+  @media (max-width: 560px) {
+    font-size: 15px;
+  }
+  @media (max-width: 501px) {
+    font-size: 12px;
+  }
 `;

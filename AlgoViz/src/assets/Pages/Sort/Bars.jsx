@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 import { state } from '../../../store';
 import { useSnapshot } from 'valtio';
 
-
-function Bars({arr,setArr}) {
+function Bars({ arr, setArr }) {
   const snap = useSnapshot(state);
+
   function generateRandomArray(n) {
     if (n <= 0) {
       return [];
@@ -17,7 +17,7 @@ function Bars({arr,setArr}) {
 
     const randomArray = [];
     for (let i = 0; i < n; i++) {
-      const randomValue = Math.floor(Math.random() * 0.5*(max - min) ) + 10
+      const randomValue = Math.floor(Math.random() * 0.5 * (max - min)) + 10;
       randomArray.push([randomValue, '#0085FF']);
     }
 
@@ -33,10 +33,10 @@ function Bars({arr,setArr}) {
         <Sticks
           bg={value[1]}
           w={arr.length}
-          h={value[0] * (80/20)}
+          h={window.innerWidth<640?value[0] * (75 / 20):value[0] * (80 / 20)}
           key={index}
         >
-          {arr.length<35?value[0]:''}
+          {arr.length < 30 ? value[0] : ''}
         </Sticks>
       ))}
     </Box>
@@ -52,11 +52,15 @@ const Sticks = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid rgba(4,22,86,1);
-  border-bottom: 2px solid rgba(4,22,86,1);
-  border-right: 1px solid rgba(4,22,86,1);
-  border-left: 1px solid rgba(4,22,86,1);
-`
+  border: 1px solid rgba(4, 22, 86, 0.7); 
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  border-radius: 5px 5px 0 0 ;
+  border-bottom: 2px solid rgba(4, 22, 86, 0.7) ;
+  @media (max-width: 580px) {
+    font-size: 10px;
+  }
+`;
+
 const Box = styled.div`
   width: 100vw;
   height: 100%;
@@ -64,12 +68,13 @@ const Box = styled.div`
   align-items: flex-end;
 
   & :first-child {
-    border-bottom-left-radius: 20px;
-    border-left: 2px solid rgba(4,22,86,1);
+    border-radius: 5px 5px 0 25px ;
+    border-left: 2px solid rgba(4, 22, 86, 1);
+
   }
 
   & :last-child {
-    border-bottom-right-radius: 20px;
-    border-right: 2px solid rgba(4,22,86,1);
+    border-radius: 5px 5px 25px 0;
+    border-right: 2px solid rgba(4, 22, 86, 1);
   }
-`
+`;
