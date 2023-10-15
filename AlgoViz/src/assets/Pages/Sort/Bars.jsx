@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { InsertionSort, BubbleSort } from './SortingAlgos';
 import { useEffect } from 'react';
 import { state } from '../../../store';
 import { useSnapshot } from 'valtio';
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-function Bars() {
-  const [arr, setArr] = useState([]);
+
+function Bars({arr,setArr}) {
   const snap = useSnapshot(state);
   function generateRandomArray(n) {
     if (n <= 0) {
@@ -30,40 +27,10 @@ function Bars() {
     setArr((prev) => generateRandomArray(state.ArraySize));
   }, [state.ArraySize]);
 
-  const Startsorting = async () =>{
-    state.isSorting = true;
-    switch (state.AlgoSelected) {
-      case "Insertion":
-        await InsertionSort(arr, setArr,state.delay)
-        toast.success("Hurray! Your Array is now Sorted ")
-        break;
-      case "Bubble":
-        await BubbleSort(arr, setArr,state.delay)
-        toast.success("Hurray! Your Array is now Sorted ")
-        break;
-      case "Selection":
-        await InsertionSort(arr, setArr,state.delay)
-        toast.success("Hurray! Your Array is now Sorted ")
-        break;
-      case "Merge":
-        await InsertionSort(arr, setArr,state.delay)
-        toast.success("Hurray! Your Array is now Sorted ")
-        break;
-      case "Quick":
-        await InsertionSort(arr, setArr,state.delay)
-        toast.success("Hurray! Your Array is now Sorted ")
-        break;
-      default:
-        toast.error("Please Choose an Algorithm!")
-      }
-    state.isSorting = false
-  }
-
   return (
     <Box>
       {arr.map((value, index) => (
         <Sticks
-          onClick={Startsorting}
           bg={value[1]}
           w={arr.length}
           h={value[0] * (80/20)}

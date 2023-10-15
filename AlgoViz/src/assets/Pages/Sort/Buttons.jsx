@@ -3,44 +3,95 @@ import { state } from "../../../store";
 import { useSnapshot } from "valtio";
 import "react-dropdown/style.css";
 import Drop from "./Drop";
+import { MdSpeed } from "react-icons/md";
+import { CgSize } from "react-icons/cg";
+import { BsGooglePlay } from "react-icons/bs";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  InsertionSort,
+  BubbleSort,
+  SelectionSort,
+  MergeSort,
+  QuickSort,
+} from "./SortingAlgos";
 
-function Buttons() {
+function Buttons({ arr, setArr }) {
   const [rangeValue, setRangeValue] = useState(50);
   const [speedValue, setSpeedValue] = useState(7);
   const snap = useSnapshot(state);
-  const options = ["one", "two", "three"];
-  const defaultOption = options[0];
 
   const handleRangeChange = (e) => {
     state.ArraySize = e.target.value;
     setRangeValue(e.target.value);
   };
 
+  const Startsorting = async () => {
+    state.isSorting = true;
+    switch (state.AlgoSelected) {
+      case "Insertion":
+        await InsertionSort(arr, setArr, state.delay);
+        toast.success("Hurray! Your Array is now Sorted ");
+        break;
+      case "Bubble":
+        await BubbleSort(arr, setArr, state.delay);
+        toast.success("Hurray! Your Array is now Sorted ");
+        break;
+      case "Selection":
+        await SelectionSort(arr, setArr, state.delay);
+        toast.success("Hurray! Your Array is now Sorted ");
+        break;
+      case "Merge":
+        await MergeSort(arr, setArr, state.delay);
+        toast.success("Hurray! Your Array is now Sorted ");
+        break;
+      case "Quick":
+        await QuickSort(arr, setArr, state.delay);
+        toast.success("Hurray! Your Array is now Sorted ");
+        break;
+      default:
+        toast.error("Please Choose an Algorithm!");
+    }
+    state.isSorting = false;
+  };
+
   const handleSpeedChange = (e) => {
     const minSpeed = 5;
-    const maxSpeed = 10;
+    let maxSpeed = 10;
     const minDelay = state.ArraySize > 80 ? 0 : 15;
-    const maxDelay = 500;
-
+    const maxDelay = 1000;
+  
+    if (state.ArraySize > 100) {
+      maxSpeed = 7;
+    } else if (state.ArraySize < 50) {
+      maxSpeed = 12;
+    }
+  
     const speedValue = parseInt(e.target.value, 10);
     const delay =
       ((maxSpeed - speedValue) / (maxSpeed - minSpeed)) *
-        (maxDelay - minDelay) +
+      (maxDelay - minDelay) +
       minDelay;
-
+  
     state.delay = delay;
     setSpeedValue(speedValue);
   };
+  
 
   return (
     <>
-      <div className="flex justify-between w-[100%] gap-8">
+      <div className="flex justify-between w-[100%] gap-3">
         <div className="flex-grow h-[40px] bg-[#FFA800] rounded-lg flex justify-evenly items-center">
           <label
             htmlFor="steps-range"
             className="block mb-1 text-lg font-medium text-gray-900 dark:text-white"
           >
-            Array Size
+            <span className="flex justify-center items-center gap-3">
+              <span className=" text-2xl ">
+                <CgSize />
+              </span>
+              <span>Array Size</span>
+            </span>
           </label>
           <input
             disabled={state.isSorting}
@@ -59,7 +110,12 @@ function Buttons() {
             htmlFor="speed"
             className="block mb-1 text-lg font-medium text-gray-900 dark:text-white"
           >
-            Algo Speed
+            <span className="flex justify-center items-center gap-3">
+              <span className=" text-2xl ">
+                <MdSpeed />
+              </span>
+              <span>Algo Speed</span>
+            </span>
           </label>
           <input
             disabled={state.isSorting}
@@ -73,8 +129,19 @@ function Buttons() {
             onChange={handleSpeedChange}
           />
         </div>
-        <div className="flex-grow h-[40px] w-[5%] rounded-lg">
+        <div className="flex-grow h-[40px]  rounded-lg z-50">
           <Drop />
+        </div>
+        <div
+          onClick={state.isSorting?null:Startsorting}
+          className="flex-grow h-[40px] bg-[#FFA800] rounded-lg flex justify-evenly items-center"
+        >
+          <span className="flex justify-center items-center gap-3 mb-1 text-lg font-medium text-gray-900 cursor-pointer">
+            <span>{state.isSorting ? "Sorting" : "Start"}</span>
+            <span className={`text-lg ${state.isSorting ? "blinking" : ""}`}>
+              <BsGooglePlay />
+            </span>
+          </span>
         </div>
       </div>
     </>
