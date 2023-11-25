@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { state } from "../../../store";
-import { useSnapshot } from "valtio";
 
 function Drop() {
   const snap = useSnapshot(state);

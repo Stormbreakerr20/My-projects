@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { state } from "../../../store";
 import { useSnapshot } from "valtio";
 
+
+
 function Drop() {
   const snap = useSnapshot(state);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -26,11 +28,11 @@ function Drop() {
           Selected && "justify-center"
         } hover:bg-yellow-300 rounded-lg px-5 h-[40px] text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
         type="button"
-        disabled={state.isRunning}
+        disabled={state.isSorting}
         onClick={handleDropdownToggle}
       >
         {Selected ? state.AlgoSelected + " Sort" : "Choose Sort-Algo"}
-        {!state.isRunning && (
+        {!state.isSorting && (
           <svg
             className="w-2.5 h-2.5 ml-2.5"
             aria-hidden="true"
@@ -62,38 +64,6 @@ function Drop() {
               onClick={() => handleOptionSelect("Insertion")}
             >
               Insertion Sort
-            </a>
-          </li>
-          <li>
-            <a
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer"
-              onClick={() => handleOptionSelect("Bubble")}
-            >
-              Bubble Sort
-            </a>
-          </li>
-          <li>
-            <a
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer"
-              onClick={() => handleOptionSelect("Selection")}
-            >
-              Selection Sort
-            </a>
-          </li>
-          <li>
-            <a
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover-bg-gray-600 dark:hover:text-white hover:cursor-pointer"
-              onClick={() => handleOptionSelect("Merge")}
-            >
-              Merge Sort
-            </a>
-          </li>
-          <li>
-            <a
-              className="block px-4 py-2 hover-bg-gray-100 dark:hover-bg-gray-600 dark:hover-text-white hover:cursor-pointer"
-              onClick={() => handleOptionSelect("Quick")}
-            >
-              Quick Sort
             </a>
           </li>
         </ul>
