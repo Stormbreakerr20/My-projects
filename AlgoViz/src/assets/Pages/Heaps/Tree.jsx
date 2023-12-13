@@ -1,5 +1,3 @@
-import React from "react";
-import { useState, useEffect } from "react";
 import "../Heaps/tree.css";
 function Tree({ heapdata, setHeapdata }) {
 
@@ -30,9 +28,10 @@ function Tree({ heapdata, setHeapdata }) {
     );
   };
 
+  
   return (
     <>
-      <div className="tree flex flex-col mx-auto w-[100%] h-[100%] items-center justify-center max-sm:h-[80vh] mt-5">
+      <div className="tree flex flex-col text-lg mx-auto w-[100%] h-[100%] items-center">
         <>
           {heapdata.length === 1?"": (
             <ul>

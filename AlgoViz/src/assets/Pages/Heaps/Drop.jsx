@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { state } from "../../../store";
 import { useSnapshot } from "valtio";
 
-
-
-function Drop() {
+function Drop({setheapdata}) {
   const snap = useSnapshot(state);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [Selected, setSelected] = useState(false);
@@ -17,6 +15,7 @@ function Drop() {
     state.AlgoSelected = algoSelected;
     setSelected(true)
     setIsDropdownOpen(false);
+    setheapdata(prev => [[0,null]])
   };
 
   return (
@@ -31,7 +30,7 @@ function Drop() {
         disabled={state.isSorting}
         onClick={handleDropdownToggle}
       >
-        {Selected ? state.AlgoSelected + " Sort" : "Choose Sort-Algo"}
+        {Selected ? state.AlgoSelected : "Choose Heap-Algo"}
         {!state.isSorting && (
           <svg
             className="w-2.5 h-2.5 ml-2.5"
@@ -61,9 +60,17 @@ function Drop() {
           <li>
             <a
               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer"
-              onClick={() => handleOptionSelect("Insertion")}
+              onClick={() => handleOptionSelect("Min Heap")}
             >
-              Insertion Sort
+              Min Heap
+            </a>
+          </li>
+          <li>
+            <a
+              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer"
+              onClick={() => handleOptionSelect("Max Heap")}
+            >
+              Max Heap
             </a>
           </li>
         </ul>

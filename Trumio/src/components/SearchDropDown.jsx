@@ -17,7 +17,6 @@ const SearchableDropdown = ({ options, setDropdowni, dropdowni,text }) => {
   const filteredOptions = options.filter((option) =>
     option.label.toLowerCase().includes(searchInput.toLowerCase())
   );
-
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
         <Select
