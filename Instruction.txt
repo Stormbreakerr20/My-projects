@@ -4,7 +4,7 @@ Since it is not a full stack project we are using VITE for this : https://vitejs
 Install it from instruction given on website
 (Install Node.js If not installed ever before)
 
-1. For Nike : npm create vite@latest => cd project => npm i to install rest packages  => npm run dev to start
+1. For Nike :   => cd project => npm i to install rest packages  => npm run dev to start
 
 Google font poppins for  fonts
 
